@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jpmorgan.connect.services</groupId>
+	<artifactId>delete-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>delete-api</name>
+	<description>RESTful API to delete data</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+		<default-repo.version>0.0.1-SNAPSHOT</default-repo.version>
+		<connect-repos.version>0.0.1-SNAPSHOT</connect-repos.version>
+		<connect-models.version>0.0.1-SNAPSHOT</connect-models.version>
+		<connect-shared.version>0.0.1-SNAPSHOT</connect-shared.version>
+		<connect-exception-handler.version>0.0.1-SNAPSHOT</connect-exception-handler.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jpmorgan.connect.models</groupId>
+			<artifactId>connect-models</artifactId>
+			<version>${connect-models.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jpmorgan.connect.core</groupId>
+			<artifactId>connect-exception-handler</artifactId>
+			<version>${connect-exception-handler.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jpmorgan.connect.repos</groupId>
+			<artifactId>connect-repos</artifactId>
+			<version>${connect-repos.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jpmorgan.connect.repos</groupId>
+			<artifactId>default-repo</artifactId>
+			<version>${default-repo.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jpmorgan.connect.shared</groupId>
+			<artifactId>connect-shared</artifactId>
+			<version>${connect-shared.version}</version>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
